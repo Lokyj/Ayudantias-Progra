@@ -7,7 +7,7 @@ void agregarProducto(string nombresProd[50], int preciosProd[50], float descuent
 int buscarProducto(string nombresProd[50],  string nombre);
 void buscarProductoPorIndice(string nombresProd[50],  int indiceProducto);
 void mostrarProductos(string nombresProd[50], int preciosProd[50], float descuentosProd[50], int stockProd[50]);
-bool agregarDescuento(string nombresProd[50], float descuentosProd[50], int numProductos, string nombre, float nuevoDescuento);
+bool agregarDescuento(string nombresProd[50], float descuentosProd[50],  string nombre, float nuevoDescuento);
 
 // Gestión de ventas
 void registrarVenta(string nombresProd[50], int preciosProd[50], float descuentosProd[50], int stockProd[50],int ventas[200][3],string nombreProducto, int cantidad);
