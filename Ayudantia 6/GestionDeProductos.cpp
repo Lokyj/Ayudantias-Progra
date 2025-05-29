@@ -3,10 +3,14 @@
 using namespace std;
 
 /* Pequeñas aclaraciones:
-1. En C++, los arreglos se pueden inicializar con llaves vacías `{}` para crear un arreglo completamente vacío (Ejemplo en el int main()). En caso de String todas las posiciones se inicializan como cadenas vacías `""`, y en caso de enteros todos los valores se inicializan a 0. Si esto no se hace, las posiciones del arreglo pueden contener valores aleatorios (esto debido a como funciona c++), lo cual puede causar errores al realizar comparaciones con IFs. Para realizar las funciones de este ejercicio, asuma que todos los arreglos seran inicializados vacios como en el main.
+1. En C++, los arreglos se pueden inicializar con llaves vacías `{}` para crear un arreglo completamente vacío (Ejemplo en el int main()).
+En caso de String todas las posiciones se inicializan como cadenas vacías `""`, y en caso de enteros todos los valores se inicializan a 0. 
+Si esto no se hace, las posiciones del arreglo pueden contener valores aleatorios (esto debido a como funciona c++), lo cual puede causar errores al realizar comparaciones con IFs.
+Para realizar las funciones de este ejercicio, asuma que todos los arreglos seran inicializados vacios como en el main.
 2. Una funcion puede tener todos los returns que se quieran, pero solo uno de ellos se ejecutará. El return termina la ejecución de la función y retorna el valor indicado. 
 3. Una funcion que no sea de tipo void debe siempre retornar un valor, mientras que una funcion de tipo void solo puede usar un return vacío para terminar la ejecución de la función.
-4. Los nombres de los parametros de una funcion no deben coincidir necesariamnete con los nombres de las variables con las que se llama a la funcion (llamar a la funcion = usarla), ya sea en el main o en otra funcion.
+4. Los nombres de los parametros de una funcion no deben coincidir necesariamnete con los nombres de las variables con las que se llama a la funcion (llamar a la funcion = usarla), ya sea en 
+el main o en otra funcion.
 */
 
 
@@ -15,7 +19,8 @@ void agregarProducto(string nombresProd[50], int preciosProd[50], float descuent
     for (int i=0;i<50;i++){ // Recorre el arreglo de productos
         if(nombresProd[i]==""){  // Si el nombre del producto en la posición i es una cadena vacía, significa que esa posición está disponible
             
-            // Considerar que en este tipo de problemas, el precio en la posoción i del arreglo preciosProd, el stock en la posición i del arreglo stockProd y el descuento en la posición i del arreglo descuentosProd corresponden al mismo producto que se está agregando en la posición i del arreglo nombresProd
+            /* Considerar que en este tipo de problemas, el precio en la posoción i del arreglo preciosProd, el stock en la posición i del arreglo stockProd y el descuento en la posición i del 
+            arreglo descuentosProd corresponden al mismo producto que se está agregando en la posición i del arreglo nombresProd */
 
             nombresProd[i]=nombre; // Agrega el nombre del producto en la posición i
             preciosProd[i]=precio; // Agrega el precio del producto en la posición i
@@ -55,7 +60,8 @@ void mostrarProductos(string nombresProd[50], int preciosProd[50], float descuen
     cout << "Productos actualemnte registrados:" << endl;
     for (int i=0;i<50;i++){
         if(nombresProd[i]!=""){ // Verifica que el nombre del producto no sea una cadena vacía
-            // Si el nombre del producto no es una cadena vacía, significa que hay un producto registrado en esa posición y se muestra su información accediendo a su indice (en este caso i) en los arreglos correspondientes
+            /* Si el nombre del producto no es una cadena vacía, significa que hay un producto registrado en esa posición y se muestra su información accediendo a su indice (en este caso i) en 
+            los arreglos correspondientes */
 
             cout << "Producto: " << nombresProd[i]<<endl;
             cout << "Precio: " << preciosProd[i]<<endl; 
@@ -65,7 +71,8 @@ void mostrarProductos(string nombresProd[50], int preciosProd[50], float descuen
     }
 };
 bool agregarDescuento(string nombresProd[50], float descuentosProd[50],  string nombre, float nuevoDescuento){
-    // Recordar que una funcion puede ser llamada dentro de otra funcion, por lo que se puede llamar a buscarProducto dentro de agregarDescuento y asi encontrr el indice del producto al que se le quiere agregar un descuento
+    /* Recordar que una funcion puede ser llamada dentro de otra funcion, por lo que se puede llamar a buscarProducto dentro de agregarDescuento y asi encontrr el indice del producto al que se 
+    le quiere agregar un descuento */
 
     int indiceProducto = buscarProducto(nombresProd, nombre); // Busca el índice del producto por su nombre
     if (indiceProducto != -1) { // Si el indice es -1 signifca que la funcion buscarProducto no encontró el producto, por lo que no se puede agregar un descuento
