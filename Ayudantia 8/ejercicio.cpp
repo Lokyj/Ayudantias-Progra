@@ -62,7 +62,7 @@ int main() {
     if (consultaM(matriz, fila, columna)) {
         cout << "el lugar seleccionado tiene una bomba" << endl;
     } else {
-        cout << "el lugar seleccionado no tiene una bomba" << endl; // por el funcionamiento de consultaM, si se instroduce una fila o columna fuera de los límites, se imprime un mensaje y no se cuenta como bomba.
+        cout << "el lugar seleccionado no tiene una bomba" << endl; // por el funcionamiento de consultaM, si se instroduce una fila o columna fuera de los límites, este else se activaria tambien
     }
 
     cuentaM(matriz);
